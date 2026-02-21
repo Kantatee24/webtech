@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;700&display=swap');
+
+:root {
+  --f1-red: #e10600;       /* Official F1 Red */
+  --carbon-black: #15151e; /* F1 Dark Background */
+  --asphalt: #1f1f27;
+  --f1-white: #ffffff;
+  --silver: #949498;
+}
+
+body {
+  margin: 0;
+  background-color: var(--carbon-black);
+  background-image: 
+    linear-gradient(rgba(225, 6, 0, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(225, 6, 0, 0.05) 1px, transparent 1px);
+  background-size: 30px 30px; /* Grid เหมือนสนามแข่ง */
+  color: var(--f1-white);
+  font-family: 'Inter', sans-serif;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== HEADER (Pit Wall Style) ===== */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--carbon-black);
+  border-bottom: 4px solid var(--f1-red);
+  padding: 10px 0;
+}
+
+.header-container {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.logo-section h2 {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 900;
+  font-size: 1.5rem;
+  font-style: italic;
+  letter-spacing: -1px;
+}
+
+.logo-section span {
+  color: var(--f1-red);
+}
+
+.nav-menu a {
+  color: var(--silver);
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: 700;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: 0.3s;
+}
+
+.nav-menu a.active {
+  color: var(--f1-red);
+  border-bottom: 2px solid var(--f1-red);
+}
+
+/* ===== FANCY CARD (Chassis Design) ===== */
+.fancy-card {
+  background: var(--asphalt);
+  border-radius: 0 40px 0 40px; /* ทรงตัดเฉียงแบบ aerodynamic */
+  padding: 40px;
+  border-left: 8px solid var(--f1-red);
+  box-shadow: 10px 10px 0px rgba(225, 6, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.fancy-card::after {
+  content: "F1";
+  position: absolute;
+  bottom: -20px;
+  right: -10px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 100px;
+  color: rgba(255, 255, 255, 0.02);
+  z-index: 0;
+}
+
+/* ===== PROFILE IMAGE ===== */
+.profile-img-large {
+  width: 180px;
+  height: 180px;
+  border-radius: 0 30px 0 30px;
+  border: 3px solid var(--f1-red);
+  object-fit: cover;
+  transform: skewX(-5deg); /* เอียงให้ดูมีความเร็ว */
+}
+
+/* ===== TAGS & BADGES ===== */
+.skill-tag {
+  background: transparent;
+  color: var(--f1-white);
+  padding: 6px 14px;
+  border: 1px solid var(--silver);
+  margin: 5px;
+  display: inline-block;
+  font-size: 11px;
+  font-family: 'Orbitron', sans-serif;
+  text-transform: uppercase;
+}
+
+.skill-tag:hover {
+  background: var(--f1-red);
+  border-color: var(--f1-red);
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  text-align: center;
+  padding: 40px;
+  background: #000;
+  border-top: 1px solid var(--asphalt);
+  font-family: 'Orbitron', sans-serif;
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: var(--silver);
+}
